@@ -1,0 +1,305 @@
+@font-face {
+    font-family: "Inter";
+	src: url("./fonts/inter.woff") format('woff');
+}
+
+body{
+	margin: 0px;
+	font-family: Inter;
+	color: #333333;
+}
+
+.pdnone{
+	/*
+	padding-left : unset;
+	padding-right: unset;
+	*/
+}
+
+.header{
+	height: 68px;
+	padding:  24px 48px;
+	margin-bottom: 64px;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.header .svgstyle{
+	padding-top:  3px;
+}
+
+.menuitem:first-child{
+	margin-right:  24px;
+}
+
+.menuitem a{
+	color: inherit; /* blue colors for links too */
+  	text-decoration: inherit; /* no underline */
+}
+
+.menuoptions, .menuimg{
+	float: right;
+}
+
+.selected{
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 16px;
+	line-height: 20px;
+	color: #000000;
+	
+}
+
+.hello{
+	margin-bottom:  10px;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.iamname{
+	font-style: normal;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 39px;
+	margin-bottom : 24px;
+}
+
+.description{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 32px;
+	margin-bottom: 24px;
+}
+
+.description a{
+	text-decoration: none;
+	color:  #2962ff;
+}
+
+.downloadcv{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 12px;
+
+	position: static;
+	width: 140px;
+	height: 44px;
+	left: 0px;
+	top: 179px;
+
+	background: #000000;
+	border-radius: 4px;
+	margin-bottom: 64px;
+
+}
+
+.dcvtext{
+	cursor: hand;
+	position: static;
+	width: 92px;
+	height: 20px;
+	left: 24px;
+	top: 0px;
+
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	/* identical to box height, or 143% */
+
+	color: #FFFFFF;
+	margin: 0px 0px 0px 5px;
+    padding-left: 2px;
+
+}
+
+.selectedprojects{
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 24px;
+	margin-bottom: 24px;
+}
+
+.projects{
+
+}
+
+.project_i{
+	background: #EAEEF1;
+	border-radius: 4px;
+	margin-bottom: 24px;
+}
+
+.project_i2{
+	border-radius: 4px;
+	margin-bottom: 48px;
+}
+
+.project_i2 .pimg{
+	background: #EAEEF1;
+	margin-top:  32px;
+	padding:  56px 10% 0px 10%; /** 80% **/
+	margin-bottom: 16px;
+}
+.project_i2 .pheading{
+	text-align: left;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 24px;
+	margin-bottom: 8px;
+}
+
+.project_i2 .viewcasestudy{
+	cursor: pointer;
+	margin-top: 16px;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 24px;
+	color: #2962FF;
+}
+.casehref{
+	text-decoration: none;
+}
+.project_i2 .viewcasestudy div{
+	display: inline-block
+}
+.project_i2 .viewcasestudy .arrow{
+	transition: padding-left 0.6s ease-in-out
+}
+.project_i2 .viewcasestudy:hover .arrow{
+	padding-left: 10px;
+}
+
+.project_i .pheading{
+	padding-top:  32px;
+	text-align: left;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.project_i .pdesc{
+	margin: 10px 0px 0px 0px;
+	padding: 2px 5% 24px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	text-align: left;
+	line-height: 20px;
+}
+
+.project_i .pimg{
+	margin-top:  32px;
+	margin:  0 10%; /** 80% **/
+}
+
+.imgcontainer {
+   position: relative;
+   width: 100%;
+   /*padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.pimg img1{
+   position:  absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   text-align: center;
+   font-size: 20px;
+   color: white;
+}
+
+.footer{
+	margin-top: 48px;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+	color:  #333333;
+}
+
+.reachout, .reachoutvia, .social{
+	text-align: center;
+	margin:  16px 0px;
+}
+
+.reachoutvia{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.social{
+	margin-bottom:  56px;
+}
+.social a{
+	text-decoration: none;
+}
+.social a svg{
+	margin-right:  16px;
+}
+
+
+.quote{
+	background-color: #F7F7F7;
+	min-height: 232px;
+}
+
+.fline_quote{
+	padding: 85px 15px 0px 15px;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 32px;
+}
+
+.quotesvg{
+	margin-bottom:  12px;
+}
+
+.by_author{
+	font-family: Inter;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	padding-bottom: 85px;
+}
+
+.abtcontainer{
+	margin-top:  40px;
+}
+
+.about{
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 29px;	
+	margin-bottom: 24px;
+}
+
+.abtitems{
+	padding-top:  24px;
+}
