@@ -46,6 +46,10 @@ body{
 	margin-right:  24px;
 }
 
+.menuitem:hover{
+	color: #2962FF;
+}
+
 .menuitem a{
 	color: inherit; /* blue colors for links too */
   	text-decoration: inherit; /* no underline */
@@ -123,6 +127,7 @@ body{
 .description a{
 	text-decoration: none;
 	color:  #2962ff;
+	font-weight: 600;
 }
 
 .downloadcv{
@@ -217,7 +222,7 @@ body{
 	font-family: Inter;
 	font-style: normal;
 	font-weight: 600;
-	font-size: 18px;
+	font-size: 20px;
 	line-height: 24px;
 	margin-bottom: 8px;
 }
@@ -251,7 +256,7 @@ body{
 	font-family: Inter;
 	font-style: normal;
 	font-weight: 600;
-	font-size: 18px;
+	font-size: 20px;
 	line-height: 24px;
 }
 
@@ -260,9 +265,18 @@ body{
 	padding: 2px 5% 24px;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 14px;
+	font-size: 16px;
 	text-align: left;
-	line-height: 20px;
+	line-height: 28px;
+}
+
+.project_i2 .pdesc{
+	margin: 10px 0px 0px 0px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	text-align: left;
+	line-height: 28px;
 }
 
 .project_i .pimg{
@@ -308,6 +322,11 @@ body{
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 18px;
+	color:  #2962FF;
+}
+
+.reachoutvia a{
+	text-decoration: none;
 }
 
 .social{
@@ -315,6 +334,7 @@ body{
 }
 .social a{
 	text-decoration: none;
+	padding-right:  16px;
 }
 .social a svg{
 	margin-right:  16px;
@@ -367,4 +387,41 @@ body{
 
 .mobile-abt{
 	display: none;
+}
+
+/***CASE STUDY***/
+.casestudy-main-cont{
+	background: #EAEEF1;
+}
+
+.csimgcontainer{
+	width: 66.666666%;
+	margin-left:  16.666667%; 
+	padding-top:  24px;
+}
+
+.content-sec{
+	margin-top:  64px;
+}
+
+.content-heading{
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 20px;
+	color: #333333;
+}
+
+.content-para{
+	margin-top: 16px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 32px;
+	color:  #333333;
+}
+
+.content-img{
+	margin-top:  16px;
+	width: 100%;
 }

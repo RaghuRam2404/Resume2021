@@ -26,4 +26,8 @@
 	.fcom{
 		margin-top: 16px;
 	}
+	.csimgcontainer{
+		width: 95%;
+		margin: 0px 2.5%; 
+	}
 }
