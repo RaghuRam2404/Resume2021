@@ -13,6 +13,7 @@ body{
 	
 }
 
+/*** HEADER ***/
 .webmenu{
 	display: block;
 }
@@ -46,6 +47,8 @@ body{
 
 .menuoptions, .menuimg{
 	float: right;
+	margin-top:  9.5px;
+	cursor: pointer;
 }
 
 .selected{
@@ -56,6 +59,34 @@ body{
 	color: #000000;
 	
 }
+
+.floatmenu{
+	display: none;
+	position: absolute;
+	margin-top:  18px;
+	width:  100%;
+	height:  114px;
+	background: #F6F6F6;
+	font-size: 18px;
+	line-height: 24px;
+	color: #333333;
+	z-index: 10;
+	top: 48px;
+}
+
+.floatmenuitem{
+	padding: 21px 0px 10.5px 0px;
+	text-align: center;
+}
+
+.floatmenuitem a{
+	text-decoration: none;
+	color: #333333;
+}
+.floatmenuitem .selected{
+	color: #2962FF;
+}
+/*** END OF HEADER***/
 
 .hello{
 	margin-bottom:  10px;
@@ -143,9 +174,6 @@ body{
 	line-height: 24px;
 	color: #000000;
 
-}
-
-.skrow{
 	margin-top:  24px;
 }
 
@@ -286,6 +314,7 @@ body{
 	margin-right:  16px;
 }
 
+/** ABOUT PAGE **/
 
 .quote{
 	background-color: #F7F7F7;
@@ -328,4 +357,8 @@ body{
 
 .abtitems{
 	padding-top:  24px;
+}
+
+.mobile-abt{
+	display: none;
 }
