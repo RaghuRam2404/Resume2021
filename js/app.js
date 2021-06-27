@@ -15,6 +15,24 @@ function toggle_menu(){
 }
 
 function bodyLoad(){
+
+	
+	$('img').each(function(){
+		var img1 = $(this).attr('src')
+		var img2 = $(this).attr('data-hover')
+		var elt = document.createElement('img')
+		elt['src'] = img1
+		if(img2 != undefined){
+			elt['src'] = img2
+		}
+	}).promise().done(function(){
+		setTimeout(function(){
+			$(".loading_holder").css("display", "none")
+			$('body').css('background-color', 'white') 
+			$('.body').css('display', 'block') 
+		},1000);
+	})
+
 	$(".svg-change").hover(function(){
 		var ele=this
 		var swap1 = $(ele).attr('src')
