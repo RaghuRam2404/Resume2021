@@ -8,6 +8,12 @@ body{
 	font-family: Inter;
 	color: #333333;
 }
+.mobile-no-need{
+	display: block;
+}
+.mobile-need{
+	display: none;
+}
 
 .pdnone{
 	

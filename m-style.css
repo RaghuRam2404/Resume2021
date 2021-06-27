@@ -17,7 +17,13 @@
 	.mobile-no-need{
 		display: none;
 	}
+	.mobile-need{
+		display: block;
+	}
 	.mobile-abt{
 		display: block;
+	}
+	.fcom{
+		margin-top: 16px;
 	}
 }
