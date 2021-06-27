@@ -22,6 +22,7 @@ body{
 /*** HEADER ***/
 .webmenu{
 	display: block;
+	margin-top: -4px;
 }
 .mobilemenu{
 	display: none;
@@ -29,8 +30,8 @@ body{
 
 .header{
 	height: 68px;
-	padding:  24px 48px;
-	margin-bottom: 64px;
+	padding:  16px 48px;
+	/*margin-bottom: 64px;*/
 	font-family: Inter;
 	font-style: normal;
 	font-weight: normal;
@@ -66,7 +67,7 @@ body{
 	font-weight: bolder;
 	font-size: 16px;
 	line-height: 20px;
-	color: #000000;
+	color: #2962FF;
 	
 }
 
@@ -99,7 +100,8 @@ body{
 /*** END OF HEADER***/
 
 .hello{
-	margin-bottom:  10px;
+	margin-top: 64px;
+	margin-bottom:  8px;
 	font-family: Inter;
 	font-style: normal;
 	font-weight: 300;
@@ -130,8 +132,16 @@ body{
 	font-weight: 600;
 }
 
+.cvfill{
+	cursor: pointer;
+}
+
+.cvfill{
+	fill: red;
+}
+
 .downloadcv{
-	display: flex;
+	/*display: flex;
 	flex-direction: row;
 	align-items: flex-start;
 	padding: 12px;
@@ -143,7 +153,7 @@ body{
 	top: 179px;
 
 	background: #000000;
-	border-radius: 4px;
+	border-radius: 4px;*/
 	margin-bottom: 64px;
 
 }
@@ -208,7 +218,7 @@ body{
 
 .project_i2{
 	border-radius: 4px;
-	margin-bottom: 48px;
+	margin-bottom: 64px;
 }
 
 .project_i2 .pimg{
@@ -302,7 +312,8 @@ body{
 }
 
 .footer{
-	margin-top: 48px;
+	margin-top:  124px;
+	margin-bottom: 64px;
 	font-family: Inter;
 	font-style: normal;
 	font-weight: normal;
@@ -311,9 +322,26 @@ body{
 	color:  #333333;
 }
 
-.reachout, .reachoutvia, .social{
+.connect{
 	text-align: center;
-	margin:  16px 0px;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	color: #333333;
+	margin-bottom: 8px;
+}
+
+.reachout{
+	text-align: center;
+	margin-bottom: 24px;
+}
+.reachoutvia{
+	text-align: center;
+	margin-bottom: 16px;
+}
+
+.reachoutvia, .social{
+	text-align: center;
 }
 
 .reachoutvia{
@@ -329,9 +357,6 @@ body{
 	text-decoration: none;
 }
 
-.social{
-	margin-bottom:  56px;
-}
 .social a{
 	text-decoration: none;
 	padding-right:  16px;
