@@ -10,10 +10,14 @@ body{
 }
 
 .pdnone{
-	/*
-	padding-left : unset;
-	padding-right: unset;
-	*/
+	padding: 0 10px;
+}
+
+.webmenu{
+	display: block;
+}
+.mobilemenu{
+	display: none;
 }
 
 .header{

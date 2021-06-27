@@ -5,13 +5,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" ></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="./style.css" />
+<link rel="stylesheet" type="text/css" href="./m-style.css" />
 
 
 </head>
 <body>
 	<div class='body'>
 		<div class='header'>
-			<div class="container pdnone">
+			<div class="container-flex pdnone">
 				<div class='row'>
 					<div class='col-6 svgstyle'>
 						<!--svg width="75" height="13" viewBox="0 0 75 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,13 +38,13 @@
 							</svg>
 
 					</div>
-					<div class="col-6 d-none d-sm-block">
+					<div class="col-6 webmenu">
 						<div class='menuoptions float-right'>
 							<span class="menuitem selected"><a href='#'>Home</a></span>
 							<span class="menuitem"><a href='./about.html'>About</a></span>
 						</div>
 					</div>
-					<div class='col-6 d-block d-sm-none'>
+					<div class='col-6 mobilemenu'>
 						<div class='menuimg'>
 							<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M15.3 1.4C15.4857 1.4 15.6637 1.32625 15.795 1.19497C15.9263 1.0637 16 0.885652 16 0.7C16 0.514348 15.9263 0.336301 15.795 0.205025C15.6637 0.0737498 15.4857 0 15.3 0H0.7C0.514348 0 0.336301 0.0737498 0.205026 0.205025C0.0737505 0.336301 0 0.514348 0 0.7C0 0.885652 0.0737505 1.0637 0.205026 1.19497C0.336301 1.32625 0.514348 1.4 0.7 1.4H15.3ZM0.7 5.3C0.514348 5.3 0.336301 5.37375 0.205026 5.50503C0.0737505 5.6363 0 5.81435 0 6C0 6.18565 0.0737505 6.3637 0.205026 6.49497C0.336301 6.62625 0.514348 6.7 0.7 6.7H15.3C15.4857 6.7 15.6637 6.62625 15.795 6.49497C15.9263 6.3637 16 6.18565 16 6C16 5.81435 15.9263 5.6363 15.795 5.50503C15.6637 5.37375 15.4857 5.3 15.3 5.3H0.7ZM4.7 10.6C4.51435 10.6 4.3363 10.6737 4.20503 10.805C4.07375 10.9363 4 11.1143 4 11.3C4 11.4857 4.07375 11.6637 4.20503 11.795C4.3363 11.9262 4.51435 12 4.7 12H15.3C15.4857 12 15.6637 11.9262 15.795 11.795C15.9263 11.6637 16 11.4857 16 11.3C16 11.1143 15.9263 10.9363 15.795 10.805C15.6637 10.6737 15.4857 10.6 15.3 10.6H4.7Z" fill="#12344D"/>
@@ -57,8 +58,8 @@
 		</div>
 		<div class='container pdnone'>
 			<div class='row'>
-				<div class='col-xl-2 col-lg-1'></div>
-				<div class='col-xl-8 col-lg-10'>
+				<div class='col-xl-2 col-lg-1 col-none'></div>
+				<div class='col-xl-8 col-lg-10 col-12'>
 					<div class="hello">Hello there 👋</div>
 					<div class='iamname'>I'm Raghu Ram</div>
 					<div class='description'>A Software programmer who is passionate about creating complex applications, team collaboration and who is enthusiastic about learning new technologies. At present, employed in <a href='https://www.zoho.com/'>Zoho</a> for more than 7 years, developing friendly REST APIs and developer oriented items revolving around <a href='https://www.zoho.com/in/crm/'>Zoho CRM</a>.</div>
@@ -117,7 +118,7 @@
 						<div class='project_i2'>
 							<div class='pheading'><s>Customer code in single transaction</s></div>
 							<div class='pdesc'>Executing the customer's own code in a docker container. It enables the customers to achieve their custom business usecase in a single transaction, which is not possible via normal APIs. But it was dropped due to restrictions of the database transaction hold and thread holding. Instead, we went forward to the simple usecase of executing multiple APIs in single transaction.</div>
-							
+
 							<a class='casehref' href=''>
 								<div class='viewcasestudy'>
 									<div>View Case Study </div>
@@ -192,7 +193,7 @@
 						</div>
 					</div>
 				</div>
-				<div class='col-xl-2 col-lg-1'></div>
+				<div class='col-xl-2 col-lg-1 col-none'></div>
 			</div>
 		</div>
 	</div>
