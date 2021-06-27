@@ -13,3 +13,19 @@ function toggle_menu(){
 		$(".menuimg img").css('margin-right','-4px')
 	}
 }
+
+function bodyLoad(){
+	$(".svg-change").hover(function(){
+		var ele=this
+		var swap1 = $(ele).attr('src')
+		var swap2 = $(ele).attr('data-hover')
+		$(ele).attr('src',swap2)
+		$(ele).attr('data-hover',swap1)
+	}, function(){
+		var ele = this
+		var swap1 = $(ele).attr('src')
+		var swap2 = $(ele).attr('data-hover')
+		$(ele).attr('src',swap2)
+		$(ele).attr('data-hover',swap1)
+	});
+}
