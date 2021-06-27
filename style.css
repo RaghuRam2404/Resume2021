@@ -127,6 +127,28 @@ body{
 
 }
 
+.skills{
+	margin-bottom: 64px;
+}
+
+.skillset{
+	margin-top: 16px;
+}
+
+.skillname{
+	display: list-item; 
+   list-style-type: disc;
+   list-style-position: inside;
+	font-size: 18px;
+	line-height: 24px;
+	color: #000000;
+
+}
+
+.skrow{
+	margin-top:  24px;
+}
+
 .selectedprojects{
 	font-style: normal;
 	font-weight: 600;

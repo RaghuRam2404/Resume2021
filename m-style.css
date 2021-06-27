@@ -1,6 +1,6 @@
 /*mobile styling*/
 /*@media only screen and (min-width: 300px) and (max-width: 414px) and (max-device-width : 414px) {*/
-@media only screen and (max-device-width : 414px)  {
+@media only screen and (max-device-width : 414px) and (orientation: portrait) {
     .header{
     	padding:  18px 16px;
     }
