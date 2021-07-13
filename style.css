@@ -20,7 +20,6 @@ body{
 }
 
 /*** HEADER ***/
-
 .webmenu{
 	display: block;
 	margin-top: -4px;
@@ -97,6 +96,15 @@ body{
 }
 .floatmenuitem .selected{
 	color: #2962FF;
+}
+.burger-svg{
+	margin-right: 0px;
+	display: block;
+}
+.cross-svg{
+	display: none;
+	margin-top: -6.5px;
+	margin-right: -4px;
 }
 /*** END OF HEADER***/
 

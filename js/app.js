@@ -1,5 +1,18 @@
 function toggle_menu(){
-	var state = $(".floatmenu").css('display')
+	
+	var burger_svg = $(".burger-svg").css('display')
+	var cross_svg = $(".cross-svg").css('display')
+	var bcss = burger_svg == 'block' ? "none" : "block"
+	var ccss = cross_svg == 'block' ? "none" : "block"
+	$(".burger-svg").css('display', bcss)
+	$(".cross-svg").css('display', ccss)
+
+	if(ccss == 'block')
+		$(".floatmenu").css('display', 'block')
+	else
+		$(".floatmenu").css('display', 'none')
+
+	/*var state = $(".floatmenu").css('display')
 	if(state == 'block'){
 		$(".floatmenu").css('display', 'none')
 		$(".menuimg img").attr('src','./svg/burgermenu.svg')
@@ -11,7 +24,7 @@ function toggle_menu(){
 		$(".menuimg img").attr('src','./svg/cross.svg')
 		$(".menuimg").css('margin-top','3.5px')
 		$(".menuimg img").css('margin-right','-4px')
-	}
+	}*/
 }
 
 function bodyLoad(){
