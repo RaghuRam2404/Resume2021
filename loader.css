@@ -13,9 +13,14 @@
 }
 
 .loading_holder img{
-	margin-top : 25%;
+	margin-top : 10%;
 	width: 240px;
 	height: 45px;
+}
+
+.loader--style6 svg path,
+.loader--style6 svg rect{
+  fill: #2962FF;
 }
 
 .loading-line {

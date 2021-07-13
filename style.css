@@ -4,7 +4,6 @@
 }
 
 body{
-
 	margin: 0px;
 	font-family: Inter;
 	color: #333333;
@@ -21,6 +20,7 @@ body{
 }
 
 /*** HEADER ***/
+
 .webmenu{
 	display: block;
 	margin-top: -4px;

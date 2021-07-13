@@ -4,10 +4,35 @@
 @media (max-width: 414px) , screen and (max-device-width : 414px){
     .header{
     	padding:  18px 16px;
+    	display: block;
+	    position: sticky;
+	    top: 0;
+	    z-index: 10;
+	    background-color: white;
+	    right: 0;
+	    left: 0;
+    }
+    .footer{
+    	margin-bottom: 128px;
+    }
+    .floatmenu{
+    	display: none;
+	    position: fixed;
+	    margin-top: 0px;
+	    top: 68px;
+	    z-index: 10;
+	    right: 0;
+	    left: 0;
+    }
+    .hello{
+    	/*margin-top: 132px;*/
     }
     .pdnone{
     	padding: 0 24px;
     }
+    .menuimg{
+    	
+    } 
     .webmenu{
 		display: none;
 	}
@@ -29,5 +54,8 @@
 	.csimgcontainer{
 		width: 95%;
 		margin: 0px 2.5%; 
+	}
+	.casestudy-main-cont{
+		margin-top: 64px;
 	}
 }

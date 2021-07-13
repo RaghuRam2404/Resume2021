@@ -8,23 +8,57 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="./style.css" />
 <link rel="stylesheet" type="text/css" href="./m-style.css" />
+<link rel="stylesheet" type="text/css" href="./loader.css" />
 <script type="text/javascript" src="./js/app.js"></script>
 
 
 </head>
 <body onload="bodyLoad()">
-	<div class='body'>
+	
+	<div id="loading_holder" class="loading_holder">
+		<img  src='./svg/name.svg' />
+		<br />
+		<div class="loader loader--style6">
+		  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		     width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+		    <rect x="0" y="13" width="4" height="5" fill="#333">
+		      <animate attributeName="height" attributeType="XML"
+		        values="5;21;5" 
+		        begin="0s" dur="0.6s" repeatCount="indefinite" />
+		      <animate attributeName="y" attributeType="XML"
+		        values="13; 5; 13"
+		        begin="0s" dur="0.6s" repeatCount="indefinite" />
+		    </rect>
+		    <rect x="10" y="13" width="4" height="5" fill="#333">
+		      <animate attributeName="height" attributeType="XML"
+		        values="5;21;5" 
+		        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+		      <animate attributeName="y" attributeType="XML"
+		        values="13; 5; 13"
+		        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+		    </rect>
+		    <rect x="20" y="13" width="4" height="5" fill="#333">
+		      <animate attributeName="height" attributeType="XML"
+		        values="5;21;5" 
+		        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+		      <animate attributeName="y" attributeType="XML"
+		        values="13; 5; 13"
+		        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+		    </rect>
+		  </svg>
+		</div>
+	</div>
+	<div class='body' style='display: none;'>
 		<div class='header'>
 			<div class="container-flex">
 				<div class='row'>
 					<div class='col-6 svgstyle'>
 						<a href='./index.html'><img src='./svg/name.svg' /></a>
-
 					</div>
 					<div class="col-6 webmenu">
 						<div class='menuoptions float-right'>
-							<span class="menuitem"><a href='./index.html'>Home</a></span>
-							<span class="menuitem selected"><a href='#'>About</a></span>
+							<span class="menuitem "><a href='#'>Home</a></span>
+							<span class="menuitem selected"><a href='./about.html'>About</a></span>
 						</div>
 					</div>
 					<div class='col-6 mobilemenu'>
@@ -40,7 +74,8 @@
 			<div class='floatmenuitem'><a class='./index.html' href='./index.html'>Home</a></div>
 			<div class='floatmenuitem'><a href='#' class='selected'>About</a></div>
 		</div>
-		<div class='quote container-flex'>
+		<div class='clearfix'></div>
+		<div class='quote container-flex pdnone'>
 			<div class='row fline_quote'>
 				<div class='col-lg-3'></div>
 				<div class='col-lg-6'>
