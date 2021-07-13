@@ -56,7 +56,7 @@ function preloadStuffs(){
 			$(".loading_holder").css("display", "none")
 			$('body').css('background-color', 'white') 
 			$('.body').css('display', 'block') 
-		},1000);
+		},100);
 	})
 }
 
