@@ -56,7 +56,32 @@ function preloadStuffs(){
 			$(".loading_holder").css("display", "none")
 			$('body').css('background-color', 'white') 
 			$('.body').css('display', 'block') 
+
+			imageLoad()
+
 		},100);
+	})
+}
+
+function imageLoad(){
+	var html = '<div class="imgloading-icon">'+
+							    '<div class="rect rect1"></div>'+
+							    '<div class="rect rect2"></div>'+
+							    '<div class="rect rect3"></div>'+
+							'</div>';
+	$(".lzload").each(function(){
+		$(this).prepend(html)
+	})
+
+	$(".lzload").each(function(){
+		if($(this).hasClass('imgcontainer')){
+			$(this).css('min-height','100px')
+		}
+		var src = $(this).attr('src-ll')
+		this.getElementsByClassName("imgloading-icon")[0].style.display = 'none'
+		var imggg = this.getElementsByTagName("img")[0]
+		var im = imggg.getAttribute('src-ll')
+		this.getElementsByTagName("img")[0].setAttribute('src', im)
 	})
 }
 
@@ -81,4 +106,6 @@ function bodyLoad(){
 			preloadStuffs()
 		}
 	})
+
+
 }

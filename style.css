@@ -43,6 +43,10 @@ body{
 	padding-top:  3px;
 }
 
+.menuitem{
+	cursor: pointer;
+}
+
 .menuitem:first-child{
 	margin-right:  24px;
 }
@@ -425,6 +429,7 @@ body{
 
 /***CASE STUDY***/
 .casestudy-main-cont{
+	min-height: 100px;
 	background: #EAEEF1;
 }
 
@@ -458,4 +463,13 @@ body{
 .content-img{
 	margin-top:  16px;
 	width: 100%;
+}
+
+.lzload{
+	min-height: 60px;
+	background-color: #EAEEF1;
+}
+
+.pos_rel{
+	position:  relative;
 }
