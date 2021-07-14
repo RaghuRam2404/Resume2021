@@ -3,6 +3,10 @@
 	src: url("./fonts/inter.woff") format('woff');
 }
 
+:root{
+	--blue-hover : #2962FF;
+}
+
 body{
 	margin: 0px;
 	font-family: Inter;
@@ -37,6 +41,13 @@ body{
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 20px;
+	display: block;
+	 position: sticky;
+	 top: 0;
+	 z-index: 10;
+	 background-color: white;
+	 right: 0;
+	 left: 0;
 }
 
 .header .svgstyle{
@@ -52,7 +63,7 @@ body{
 }
 
 .menuitem:hover{
-	color: #2962FF;
+	color: var(--blue-hover);
 }
 
 .menuitem a{
@@ -168,7 +179,17 @@ body{
 	background: #000000;
 	border-radius: 4px;*/
 	margin-bottom: 64px;
+}
 
+.dcvholder{
+	cursor: pointer;
+	height: 44px;
+	width: 140px;
+	overflow: hidden;
+}
+
+.downloadcv img{
+	cursor: pointer;
 }
 
 .dcvtext{
@@ -325,7 +346,7 @@ body{
 }
 
 .footer{
-	margin-top:  124px;
+	margin-top:  64px;
 	margin-bottom: 64px;
 	font-family: Inter;
 	font-style: normal;
@@ -336,6 +357,7 @@ body{
 }
 
 .connect{
+	margin-top: 128px;
 	text-align: center;
 	font-weight: 600;
 	font-size: 20px;
@@ -375,7 +397,7 @@ body{
 	padding-right:  16px;
 }
 .social a svg{
-	margin-right:  16px;
+	/*margin-right:  16px;*/
 }
 
 /** ABOUT PAGE **/
@@ -472,4 +494,23 @@ body{
 
 .pos_rel{
 	position:  relative;
+}
+
+/*** back to home ***/
+.b2home{
+	display: none;
+	margin-top: 64px;
+	align-content: center;
+}
+
+.homebtn{
+	margin:  auto;
+	width: 141px;
+	cursor: pointer;
+	height: 44px;
+	overflow: hidden;
+}
+
+.dcvholder:hover svg rect, .homebtn:hover svg rect, .social a:hover svg rect{
+	fill: var(--blue-hover);
 }

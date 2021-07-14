@@ -1,6 +1,17 @@
 var index_page = "index.html"
 var about_page = "about.html"
 
+function isIndexPage(){
+	var parts = window.location.href.split("/")
+	var html_name = parts[parts.length-1]
+	return html_name == index_page || html_name=="";
+}
+function isAboutPage(){
+	var parts = window.location.href.split("/")
+	var html_name = parts[parts.length-1]
+	return html_name == about_page;
+}
+
 function toggle_menu(){
 	
 	var burger_svg = $(".burger-svg").css('display')
@@ -14,20 +25,24 @@ function toggle_menu(){
 		$(".floatmenu").css('display', 'block')
 	else
 		$(".floatmenu").css('display', 'none')
-}
+} 
 
 function preloadStuffs(){
+	if(!(isIndexPage() || isAboutPage())){
+		//show back to home btn
+		$('.b2home').css("display","block")
+	}
 	$('img').each(function(){
 		var img1 = $(this).attr('src')
 		var img2 = $(this).attr('data-hover')
 		var elt = document.createElement('img')
-		elt['src'] = img1
-		if(img2 != undefined){
+		if(img1 != undefined)
+			elt['src'] = img1
+		if(img2 != undefined)
 			elt['src'] = img2
-		}
+		
 	}).promise().done(function(){
 		setTimeout(function(){
-
 			$(".svg-change").hover(function(){
 				var ele=this
 				var swap1 = $(ele).attr('src')
@@ -42,12 +57,10 @@ function preloadStuffs(){
 				$(ele).attr('data-hover',swap1)
 			});
 
-			var parts = window.location.href.split("/")
-			var html_name = parts[parts.length-1]
-			if(html_name == index_page){
+			if(isIndexPage()){
 				$(".menuitem:nth-child(1)").addClass("selected")
 				$(".floatmenuitem:nth-child(1) a").addClass("selected")
-			}else if(html_name == about_page){
+			}else if(isAboutPage()){
 				$(".menuitem:nth-child(2)").addClass("selected")
 				$(".floatmenuitem:nth-child(2) a").addClass("selected")
 			}
@@ -59,7 +72,7 @@ function preloadStuffs(){
 
 			imageLoad()
 
-		},100);
+		},250);
 	})
 }
 
@@ -108,4 +121,14 @@ function bodyLoad(){
 	})
 
 
+}
+
+function goToHome(){
+	var parts = window.location.href.split("/")
+	var html_name = parts[parts.length-1]
+	var newUrl = ""
+	for(var i=0; i<parts.length-1; i++){
+		newUrl += parts[i]+"/"
+	}newUrl += index_page
+	window.location = newUrl
 }

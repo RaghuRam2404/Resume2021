@@ -4,13 +4,6 @@
 @media (max-width: 414px) , screen and (max-device-width : 414px){
     .header{
     	padding:  18px 16px;
-    	display: block;
-	    position: sticky;
-	    top: 0;
-	    z-index: 10;
-	    background-color: white;
-	    right: 0;
-	    left: 0;
     }
     .footer{
     	margin-bottom: 64px;
