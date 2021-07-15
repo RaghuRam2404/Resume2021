@@ -186,10 +186,13 @@ body{
 }
 
 .dcvholder{
-	cursor: pointer;
 	height: 44px;
 	width: 140px;
 	overflow: hidden;
+}
+
+.dcvholder svg{
+	cursor: pointer;
 }
 
 .downloadcv img{
