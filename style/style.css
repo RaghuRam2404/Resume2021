@@ -525,7 +525,7 @@ body{
 	overflow: hidden;
 }
 
-.dcvholder:hover svg rect, .homebtn:hover svg rect, .social a:hover svg rect{
+.dcvholder:hover svg rect, .homebtn:hover svg rect, .social a:hover svg rect, .social a:hover .gitsvg{
 	fill: var(--blue-hover);
 }
 
