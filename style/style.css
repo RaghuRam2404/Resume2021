@@ -285,6 +285,7 @@ body{
 }
 
 .project_i2 .viewcasestudy{
+	display: inline-block;
 	cursor: pointer;
 	margin-top: 16px;
 	font-family: Inter;
