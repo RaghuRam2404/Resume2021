@@ -1,5 +1,6 @@
 var index_page = "index.html"
 var about_page = "about.html"
+var projects_page = "projects.html"
 
 function isIndexPage(){
 	var parts = window.location.href.split("/")
@@ -10,6 +11,11 @@ function isAboutPage(){
 	var parts = window.location.href.split("/")
 	var html_name = parts[parts.length-1]
 	return html_name == about_page;
+}
+function isProjectsPage(){
+	var parts = window.location.href.split("/")
+	var html_name = parts[parts.length-1]
+	return html_name == projects_page;
 }
 
 function toggle_menu(){
@@ -28,7 +34,7 @@ function toggle_menu(){
 } 
 
 function preloadStuffs(){
-	if(!(isIndexPage() || isAboutPage())){
+	if(!(isIndexPage() || isAboutPage() || isProjectsPage())){
 		//show back to home btn
 		$('.b2home').css("display","block")
 	}
@@ -63,6 +69,9 @@ function preloadStuffs(){
 			}else if(isAboutPage()){
 				$(".menuitem:nth-child(2)").addClass("selected")
 				$(".floatmenuitem:nth-child(2) a").addClass("selected")
+			}else if(isProjectsPage()){
+				$(".menuitem:nth-child(3)").addClass("selected")
+				$(".floatmenuitem:nth-child(3) a").addClass("selected")
 			}
 
 

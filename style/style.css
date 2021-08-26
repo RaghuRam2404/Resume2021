@@ -62,7 +62,7 @@ body{
 	cursor: pointer;
 }
 
-.menuitem:first-child{
+.menuitem:not(:last-child){
 	margin-right:  24px;
 }
 
@@ -95,17 +95,18 @@ body{
 	position: absolute;
 	margin-top:  18px;
 	width:  100%;
-	height:  114px;
+	/*height:  114px;*/
 	background: #F6F6F6;
 	font-size: 18px;
 	line-height: 24px;
 	color: #333333;
 	z-index: 10;
 	top: 48px;
+	padding-top: 24px;
 }
 
 .floatmenuitem{
-	padding: 21px 0px 10.5px 0px;
+	padding: 0px 0px 24px 0px;
 	text-align: center;
 }
 
@@ -591,4 +592,8 @@ body{
 .shinybtn:hover svg rect{
     fill: #2962ff;    
     transition: 0.7s;
+}
+
+.first_project{
+	margin-top: 64px;
 }
