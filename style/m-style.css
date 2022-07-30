@@ -1,3 +1,10 @@
+/** ipad **/
+@media (max-width: 1000px) , screen and (max-device-width : 1000px){
+	body{
+		margin: auto 20px;
+	}
+}
+
 /*mobile styling*/
 /*@media only screen and (min-width: 300px) and (max-width: 414px) and (max-device-width : 414px) {*/
 /*(max-device-width : 414px) and (orientation: portrait)*/

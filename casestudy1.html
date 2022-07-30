@@ -48,24 +48,149 @@
 				<div class='col-xl-8 col-lg-10 col-12'>
 					
 					<div class='content-sec'>
-						<div class="content-heading">API V2 Migration</div>
-							<div class="content-para">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. <br /><br />
-
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</div>
-						<div class="content-img lzload">
+						<div class="content-heading">Zoho CRM API V2</div>
+							<div class="content-para">
+								During the time period before 2015, Zoho CRM offered only some restricted list of APIs in a non-standard way (i.e. no standard API URI structure, different type of responses for same resource across different APIs). 
+								So by the mid of 2015, we embarked on a journey to entirely revamp in terms of 
+										
+								<div class='list'>
+									<div class="container-flex">
+										<div class="row">
+											<div class='col-sm-6 listitem'>API URL</div>
+											<div class='col-sm-6'>&nbsp;</div>
+										</div>
+										<div class="row">
+											<div class='col-sm-6 listitem'>Request/Response structure</div>
+											<div class='col-sm-6'>&nbsp;</div>
+										</div>
+										<div class="row">
+											<div class='col-sm-6 listitem'>OAuth2.0 Authorization</div>
+											<div class='col-sm-6'>&nbsp;</div>
+										</div>
+										<div class="row">
+											<div class='col-sm-6 listitem'>Multi DC Handling</div>
+											<div class='col-sm-6'>&nbsp;</div>
+										</div>
+										<div class="row">
+											<div class='col-sm-6 listitem'>Exposing more functionalities via API</div>
+											<div class='col-sm-6'>&nbsp;</div>
+										</div>
+										<div class="row">
+											<div class='col-sm-6 listitem'>More API Limits, but with proper rate limiting</div>
+											<div class='col-sm-6'>&nbsp;</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						<!--div class="content-img lzload">
 							<img alt='' src-ll="./images/placeholder.png" loading="lazy" class='img-fluid'>
-						</div>
-						<h3>asdfd</h3>
-						<div class="content-para">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. <br /><br />
-
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</div>
-						<div class="content-img lzload">
-							<img alt='' src-ll="./images/placeholder.png" loading="lazy" class='img-fluid'>
+						</div-->
+					</div>
+					<div class='content-sec'>
+						<div class="main-highlight">
+							" More than 8000+ organizations migrated to v2 APIs <br/>
+							New 3000+ applications used our APIs <br/>
+							100M+ API calls consumed by the customers <br/>
+							Team Work of 8 people "<br/>
 						</div>
 					</div>
 					<div class='content-sec'>
-						<div class="content-heading">Introduction</div>
-							<div class="content-para">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. <br /></div>
+						<div class="content-heading">Technical Improvements</div>
+						<div class="content-para">
+							<h5>1. More API Credits</h5>
+							<p>
+								From having very low API limits in the older API version, we gave more API limits for customer's best usage of our APIs. We introduced API Credits so that resource intensive API calls will use
+								more API Credits and less intensive requests will use lesser API credits.
+
+								We adopted 2 methodologies for Rate Limiting and Throttling.
+								<div class='list'>
+									<div class="container-flex">
+										<div class="row">
+											<div class='col-sm-6 listitem'>Rolling Window Throttling for 24 hours
+											</div>
+											<div class='col-sm-6'>&nbsp;</div>
+										</div>
+										<p>We used to throttle the API calls for any day from PDT 00:00:00 to 23:59:59 . We changed it to  
+											rolling window of 24 hours. At any instance of time, we allowed only to fire API calls within the allowed API credits based on the last 24 hours usage. We achieved it using Redis (due to it's single thread nature
+											and faster access).</p>
+										<div class="row">
+											<div class='col-sm-6 listitem'>Concurrency Throttling</div>
+											<div class='col-sm-6'>&nbsp;</div>
+										</div>
+										<p>It defines the number of API calls which can be active at any given time instance. This is done to avoid the DDOS attack of API calls in our
+											servers. If any customer fires a resource intensive API call in parallel, it'll occupy many threads and causes resource deficit to other API calls.
+											We'll arrest it by concurrency.
+										</p>
+									</div>
+								</div>
+							</p>
+							<div class="content-img lzload">
+								<img alt='' src-ll="./images/API Limits.png" loading="lazy" class='img-fluid'>
+							</div>
+						</div>
+						<div class="content-para">
+							<h5>2. Faster API Responses</h5>
+							<p> Since we planned to give more API Credits to the user, we must optimize the response time and apply concurrency over that. We have applied necessary caching for queries and removed unwanted functionalities provided in
+								the older API version.
+							</p>
+						</div>
+						<div class="content-para">
+							<h5>3. New APIs</h5>
+							<p>We have published new APIs like <a href="https://www.zoho.com/crm/developer/docs/api/v2/notifications/overview.html">Notifications API</a> (pub/sub), 
+								<a href='https://www.zoho.com/crm/developer/docs/api/v2/bulk-read/overview.html'>Bulk API</a> (to push & pull data in bulk). 
+								They acted as selling points for the developers to use the new APIs.
+							</p>
+							<div class="content-img lzload">
+								<img alt='' src-ll="./images/bulk_notification.png" loading="lazy" class='img-fluid'>
+							</div>
+						</div>
+						<div class="content-para">
+							<h5>4. Single Code Logic</h5>
+							<p>We used to have 2 different set of code logics, one for real business usecase and another for APIs. As time moves on, we can't keep track of 
+								new business logics and existing business logic change. So we changed the code to use the native business logic for better consistency.
+							</p>
+						</div>
+					</div>
+					<div class='content-sec'>
+						<div class="content-heading">Challenges & Solutions</div>
+							<div class="content-para">
+								<h5>1. Communication to Customers</h5>
+								<p>
+									As we have released a major version and we want our customers to migrate faster, we have to communicate across different channels to get the attention of third party app developers, CRM's partners and CRM's customers. 
+									The communication channel includes <hc>email</hc>, <hc>phone</hc>, <hc>in-product banner</hc>, <hc>public forum posts</hc> and followed up with multiple reminders in those channels.
+								</p>
+								<h5>2. API Migration</h5>
+								<p>
+									The changes needed to do this migration is very big and it'll be time consuming. We have to present with proper documentation and help, so that it'll be
+									easy to refer and do the code migration in all different types of usecases like normal API calls, webhooks etc.
+								</p>
+
+							</div>
+					</div>
+					<div class='content-sec'>
+						<div class="content-heading">Learnings</div>
+							<div class="content-para">
+								<div class='list'>
+									<div class="container-flex">
+										<div class="row">
+											<div class='col-sm-10 listitem'>Good server-side API performance scaling</div>
+											<div class='col-sm-2'>&nbsp;</div>
+										</div>
+										<div class="row">
+											<div class='col-sm-10 listitem'>Unique selling points, to motivate the customers to migrate</div>
+											<div class='col-sm-2'>&nbsp;</div>
+										</div>
+										<div class="row">
+											<div class='col-sm-10 listitem'>Proper Communication</div>
+											<div class='col-sm-2'>&nbsp;</div>
+										</div>
+										<div class="row">
+											<div class='col-sm-10 listitem'>Helping Customers all the way through out the code migration</div>
+											<div class='col-sm-2'>&nbsp;</div>
+										</div>
+									</div>
+								</div>
+							</div>
 					</div>
 
 					<div class='footer'>
