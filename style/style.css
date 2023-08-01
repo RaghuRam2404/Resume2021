@@ -64,6 +64,10 @@ body{
 	 left: 0;
 }
 
+.header_shadow{
+	box-shadow: 0px 8px 10px #EAEEF1
+}
+
 .header .svgstyle{
 	padding-top:  3px;
 }
@@ -642,4 +646,126 @@ hc{
 
 .first_project{
 	margin-top: 64px;
+}
+
+
+/** PASSWORD **/
+.password-holder{
+	text-align: center;
+	max-height: 100%;
+	margin-top: 5%;
+    height:18em;
+}
+
+.content-prohibit{
+	margin-top: 32px;
+	color: #333;
+	font-family: Inter;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.content-prohibit-2{
+	margin-top: 16px;
+	color: #969696;
+	font-family: Inter;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.password-form{
+	margin-top: 32px;
+}
+
+.password-form .passcode{
+	padding: 10px 0px 10px 16px;
+	border-radius: 4px;
+	border: 1px solid #C5C5C5;
+	background: #FFF;
+	width: 20%;
+	height: 46px;
+}
+
+
+.password-form input::placeholder{
+	color: #C5C5C5;
+	font-family: Inter;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px; /* 150% */
+}
+
+.password-form button{
+	margin-left: 16px;
+	border-radius: 4px;
+	opacity: 0.3499999940395355;
+	background: #333;
+	color: #FFF;
+	font-feature-settings: 'clig' off, 'liga' off;
+	font-family: Inter;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 20px; /* 142.857% */
+	padding: 12px;
+	height: 46px;
+}
+
+
+
+.password-form button.focus{
+	opacity: 1;
+	background: #333;
+
+}
+.password-form input.focus{
+	border: 1px solid #333;
+}
+
+.password-form input.invalid {
+    outline-color: red;
+	border: 1px solid red;
+    /* also need animation and -moz-animation */
+    -webkit-animation: shake .5s linear;
+	animation: shake .5s linear;
+}
+/* also need keyframes and -moz-keyframes */
+ @-webkit-keyframes shake {
+    8%, 41% {
+        -webkit-transform: translateX(-10px);
+    }
+    25%, 58% {
+        -webkit-transform: translateX(10px);
+    }
+    75% {
+        -webkit-transform: translateX(-5px);
+    }
+    92% {
+        -webkit-transform: translateX(5px);
+    }
+    0%, 100% {
+        -webkit-transform: translateX(0);
+    }
+}
+@keyframes shake {
+    8%, 41% {
+        -webkit-transform: translateX(-10px);
+    }
+    25%, 58% {
+        -webkit-transform: translateX(10px);
+    }
+    75% {
+        -webkit-transform: translateX(-5px);
+    }
+    92% {
+        -webkit-transform: translateX(5px);
+    }
+    0%, 100% {
+        -webkit-transform: translateX(0);
+    }
 }
