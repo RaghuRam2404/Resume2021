@@ -74,9 +74,11 @@ function formValidate(){
 
 			$(".password-holder").css("display", "none")
 
-            sessionStorage.setItem("logged_in", true)
-            sessionStorage.setItem("passcode", passcode)
-            sessionStorage.setItem("expiry_time", Date.now()+session_live_time)
+            if(!isLoggedIn()){
+                sessionStorage.setItem("logged_in", true)
+                sessionStorage.setItem("passcode", passcode)
+                sessionStorage.setItem("expiry_time", Date.now()+session_live_time)
+            }
 		},
 		error: function (xhr, textStatus, error) {
 		  $(".passcode").addClass("invalid")
