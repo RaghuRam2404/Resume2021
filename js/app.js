@@ -61,7 +61,7 @@ function toggle_menu(){
 function preloadStuffs(){
 
 	if(!(isIndexPage() || isAboutPage())){
-		//$(".header").addClass("header_shadow");
+		$(".header").addClass("header_shadow");
 	}
 
 	if(!(isIndexPage() || isAboutPage() || isProjectsPage() || isOtherProjectsPage())){
@@ -111,20 +111,7 @@ function preloadStuffs(){
 			$(".loading_holder").css("display", "none")
 			$('body').css('background-color', 'white') 
 			$('.body').css('display', 'block') 
-
-			//show password form
-			if(!(isIndexPage() || isAboutPage() || isProjectsPage() || isOtherProjectsPage())){
-				$(".body").append(password_form_content)
-			}
-
-			$('.passcode').keypress(function(e) {
-				if (e.which == '13') {
-				   e.preventDefault();
-				   formValidate()
-				 }
-			  });
-			  
-
+			
 			imageLoad()
 
 		},250);
@@ -154,38 +141,28 @@ function imageLoad(){
 }
 
 function bodyLoad(){
+    console.log("Body Load 1")
 
 	var count = 0
-
-
-	if(isIndexPage() || isAboutPage()){
-		$.ajax({
-			url: "./header.html",
-		    success: function (resp) {
-		    	$('.body').prepend(resp)
-				count += 1
-				if (count == 2){
-					preloadStuffs()
-				}
-		    }
-		});
-
-		$(".footer").load("./footer.html", function(){
+	$.ajax({
+		url: "./header.html",
+		success: function (resp) {
+			$('.body').prepend(resp)
 			count += 1
 			if (count == 2){
 				preloadStuffs()
 			}
-		})
-	}else{
-		$.ajax({
-			url: "./header.html",
-		    success: function (resp) {
-		    	$('.body').prepend(resp)
-		    	preloadStuffs()
-		    }
-		});
-	}
+		}
+	});
 
+	console.log('Footer loading 1')
+	$(".footer").load("./footer.html", function(){
+		count += 1
+		console.log('footer loaded 1')
+		if (count == 2){
+			preloadStuffs()
+		}
+	})
 }
 
 function goToHome(){
