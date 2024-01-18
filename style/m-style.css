@@ -39,6 +39,15 @@
     .menuimg{
     	
     } 
+	.project_i2 .pheading{
+		line-height: 32px;
+	}
+	.reachout{
+		line-height: 28px;
+	}
+	.content-heading {
+		line-height: 32px;
+	}
     .webmenu{
 		display: none;
 	}

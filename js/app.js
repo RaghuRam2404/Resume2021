@@ -40,7 +40,13 @@ function isOtherProjectsPage(){
 	var parts = window.location.href.split("/")
 	var html_name = parts[parts.length-1]
 	html_name = html_name.split("?")[0]
-	return new RegExp('op[a-zA-Z0-9]{0,9}.html').test(html_name)
+	return new RegExp('^op[a-zA-Z0-9]{0,9}.html').test(html_name)
+}
+function isCaseStudyPage(){
+	var parts = window.location.href.split("/")
+	var html_name = parts[parts.length-1]
+	html_name = html_name.split("?")[0]
+	return new RegExp('^case[a-zA-Z0-9% ]{0,30}.html').test(html_name)
 }
 
 function toggle_menu(){
@@ -60,17 +66,27 @@ function toggle_menu(){
 
 function preloadStuffs(){
 
+
 	if(!(isIndexPage() || isAboutPage())){
-		$(".header").addClass("header_shadow");
+		window.addEventListener("scroll", function(){
+			var top_y = window.scrollY
+			if (top_y > 0){
+				$(".header").addClass("header_shadow");
+			}
+			else if (top_y == 0){
+				$(".header").removeClass("header_shadow");
+			}
+		})
 	}
 
-	if(!(isIndexPage() || isAboutPage() || isProjectsPage() || isOtherProjectsPage())){
-		//show back to home btn
-		$('.b2home').css("display","block")
-	}
 	if(isOtherProjectsPage()){
-		$(".b2oprojects").css("display","block")
+		$('.b2home').css("display","none")
+		$(".b2projects").css("display","block")
+	}else if(isCaseStudyPage()){
+		$('.b2home').css("display","block")
+		$(".b2projects").css("display","none")
 	}
+
 	$('img').each(function(){
 		var img1 = $(this).attr('src')
 		var img2 = $(this).attr('data-hover')
@@ -99,12 +115,12 @@ function preloadStuffs(){
 			if(isIndexPage()){
 				$(".menuitem:nth-child(1)").addClass("selected")
 				$(".floatmenuitem:nth-child(1) a").addClass("selected")
-			}else if(isAboutPage()){
-				$(".menuitem:nth-child(2)").addClass("selected")
-				$(".floatmenuitem:nth-child(2) a").addClass("selected")
 			}else if(isProjectsPage()){
 				$(".menuitem:nth-child(3)").addClass("selected")
 				$(".floatmenuitem:nth-child(3) a").addClass("selected")
+			}else if(isAboutPage()){
+				$(".menuitem:nth-child(2)").addClass("selected")
+				$(".floatmenuitem:nth-child(2) a").addClass("selected")
 			}
 
 
@@ -141,6 +157,7 @@ function imageLoad(){
 }
 
 function bodyLoad(){
+	//debugger
     console.log("Body Load 1")
 
 	var count = 0
@@ -176,13 +193,13 @@ function goToHome(){
 }
 
 
-function goToHome(){
+function goToProjects(){
 	var parts = window.location.href.split("/")
 	var html_name = parts[parts.length-1]
 	var newUrl = ""
 	for(var i=0; i<parts.length-1; i++){
 		newUrl += parts[i]+"/"
-	}newUrl += index_page
+	}newUrl += "projects.html"
 	window.location = newUrl
 }
 

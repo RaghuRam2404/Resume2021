@@ -1,12 +1,12 @@
 
-const session_live_time = 1*60*1000 //1 min
+const session_live_time = 10*60*1000 //1 min
 
 function isLoggedIn(){
-    if (sessionStorage.getItem("expiry_time") == null)
+    if (localStorage.getItem("expiry_time") == null)
         return false;
 
     current_time = Date.now()
-    expiry_time = sessionStorage.getItem("expiry_time")
+    expiry_time = localStorage.getItem("expiry_time")
 
     return current_time < expiry_time
 }
@@ -42,6 +42,7 @@ function formFocus(){
 	$(".passcode").removeClass("invalid")
 	$(".password-form input").addClass("focus")
 	$(".password-form button").addClass("focus")
+	$(".error_msg").css("display","none")
 }
 
 function formValidate(){
@@ -50,8 +51,10 @@ function formValidate(){
 	$(".password-form input").attr("disabled", true)
 	$(".password-form button").attr("disabled", true)
 	var passcode = $(".passcode").val()
-    if(passcode == null || passcode==="") passcode = sessionStorage.getItem("passcode", passcode)
+    if(passcode == null || passcode==="") passcode = localStorage.getItem("passcode", passcode)
 	var htmlfile = location.href.split("/").slice(-1)[0]
+
+	if(htmlfile == "") htmlfile="index.html"
 
 	$.ajax({
 		url: "https://resumedataprotect-60022959849.development.catalystserverless.in/server/PasswordProtect/?passcode="+passcode+"&filename="+htmlfile, // Replace with the URL of the API you want to access
@@ -62,28 +65,45 @@ function formValidate(){
 		},
 
 		success: function (data) {
-			$(".password-holder").css("display", "none")
-            $("body").remove();
-			$("html").append(data)
-			$(".header").addClass("header_shadow");
-			$(".footer").load("./footer.html", function(){
-				$(".footer").css("display", "block")
-			});
-			
-			bodyLoad();
 
-			$(".password-holder").css("display", "none")
+			if(typeof(data) != 'string'){
+				$(".passcode").addClass("invalid")
+				$(".password-form input").attr("disabled", false)
+				$(".password-form button").attr("disabled", false)
+				var message = "The provided password is incorrect"
+				if (data.reason.startsWith("Expired")){
+					message = "The provided password is expired"
+				}
+				$(".error_msg").html(message)
+				$(".error_msg").css("display","block")
+			}else{
 
-            if(!isLoggedIn()){
-                sessionStorage.setItem("logged_in", true)
-                sessionStorage.setItem("passcode", passcode)
-                sessionStorage.setItem("expiry_time", Date.now()+session_live_time)
-            }
+				$(".password-holder").css("display", "none")
+				$("body").empty();
+				//$("html").append(data)
+				$("body").append(data)
+				$(".header").addClass("header_shadow");
+				$(".footer").load("./footer.html", function(){
+					$(".footer").css("display", "block")
+				});
+				
+				bodyLoad();
+
+				$(".password-holder").css("display", "none")
+
+				if(!isLoggedIn()){
+					localStorage.setItem("logged_in", true)
+					localStorage.setItem("passcode", passcode)
+					localStorage.setItem("expiry_time", Date.now()+session_live_time)
+				}
+			}
 		},
 		error: function (xhr, textStatus, error) {
 		  $(".passcode").addClass("invalid")
 		  $(".password-form input").attr("disabled", false)
 		  $(".password-form button").attr("disabled", false)
+		  $(".error_msg").html("Unexpected Error Occurred in the valition server")
+		  $(".error_msg").css("display","block")
 		},
 	  });
 	

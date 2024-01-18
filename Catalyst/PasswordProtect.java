@@ -60,7 +60,7 @@ public class PasswordProtect implements CatalystAdvancedIOHandler {
 		return domains;
 	}
 	
-	private Boolean validatePasscode(String passcode) {
+	private String validatePasscode(String passcode) {
 		String nextToken = null; 
 		ZCRowPagedResponse pagedResp;
 		try {
@@ -77,7 +77,10 @@ public class PasswordProtect implements CatalystAdvancedIOHandler {
 				        LocalDateTime dateTime = LocalDateTime.parse(date, formatter);
 				       
 				        if(dateTime.isAfter(LocalDateTime.now()) && password.equals(passcode)) {
-				        	return true;
+				        	return "Valid";
+				        }
+				        else if(!dateTime.isAfter(LocalDateTime.now()) && password.equals(passcode)) {
+				        	return "Expired";
 				        }
 				        
 						//res.getWriter().write(password+" --- "+date+" --- "+(dateTime.isAfter(LocalDateTime.now()))+"\n");
@@ -92,7 +95,7 @@ public class PasswordProtect implements CatalystAdvancedIOHandler {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
-		return false;
+		return "Invalid";
 	}
 	
 	private void setCORS(HttpServletResponse response, String origin) {
@@ -171,12 +174,15 @@ public class PasswordProtect implements CatalystAdvancedIOHandler {
 		String origin = request.getHeader("Origin");
 		
 		try {
-			if(validatePasscode(passcode)) {
-				setCORS(response, origin);
+			setCORS(response, origin);
+			String checkStatus = validatePasscode(passcode);
+			if(checkStatus.equals("Valid")) {
 				Long file_id = MANOJ_FOLDER_ID;
 				if(origin.contains("raghu"))
 					file_id = RAGHU_FOLDER_ID;
 				downloadFile(response, filename, file_id);
+			}else if(checkStatus.equals("Expired")){
+				setError(response, "Expired passcode");
 			}else{
 				setError(response, "Invalid passcode");
 			}
@@ -184,7 +190,4 @@ public class PasswordProtect implements CatalystAdvancedIOHandler {
 			setError(response, e.getMessage());
 		}
 	}
-
-
-
 }
