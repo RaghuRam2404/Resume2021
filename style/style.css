@@ -931,10 +931,19 @@ hc{
 
 .project-card-left-arrow {
     left: 12px;
+	transition: left 0.3s ease;
+}
+.project-card:hover  .project-card-left-arrow{
+    left: -5px;
 }
 
 .project-card-right-arrow {
     right: 12px;
+	transition: right 0.3s ease;
+}
+
+.project-card:hover .project-card-right-arrow {
+    right: -5px;
 }
 
 /* Project Card Title */
