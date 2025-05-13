@@ -100,7 +100,7 @@ body{
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 20px;
-	color: #2962FF;
+	color: var(--blue-hover);
 	
 }
 
@@ -129,7 +129,7 @@ body{
 	color: #333333;
 }
 .floatmenuitem .selected{
-	color: #2962FF;
+	color: var(--blue-hover);
 }
 .burger-svg{
 	margin-right: 0px;
@@ -171,7 +171,7 @@ body{
 
 .description a{
 	text-decoration: none;
-	color:  #2962ff;
+	color:  var(--blue-hover);
 	font-weight: 500;
 }
 
@@ -334,7 +334,7 @@ body{
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 24px;
-	color: #2962FF;
+	color: var(--blue-hover);
 }
 .casehref{
 	text-decoration: none;
@@ -440,7 +440,7 @@ body{
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 18px;
-	color:  #2962FF;
+	color:  var(--blue-hover);
 }
 
 .reachoutvia a{
@@ -650,7 +650,7 @@ hc{
 }
 
 .shinybtn:hover svg rect{
-    fill: #2962ff;    
+    fill: var(--blue-hover);    
     transition: 0.7s;
 }
 
@@ -847,6 +847,10 @@ hc{
     height: 44px;
     background: #000000;
     border-radius: 4px;
+	transition: background 0.7s; /* Add transition for background */
+}
+.view-more-content:hover {
+    background: var(--blue-hover); /* Change to your desired background color */
 }
 
 .view-more-content span {
